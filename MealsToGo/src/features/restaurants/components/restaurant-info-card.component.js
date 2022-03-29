@@ -4,8 +4,17 @@ import { Text, StyleSheet } from "react-native";
 import { Card } from "react-native-paper";
 
 const Title = styled.Text`
-  padding: 16px;
-  color: black;
+  padding: 16px
+  color: black
+`;
+
+const RestaurantCardCover = styled(Card.Cover)`
+  padding: 20px
+  background-color: white
+  `;
+
+const RestaurantCard = styled(Card)`
+  background-color: white;
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
@@ -22,10 +31,14 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
   } = restaurant; //restuarant is an object that contains properties we would want to take
 
   return (
-    <Card elevation={5} style={styles.card}>
-      <Card.Cover key={name} style={styles.cover} source={{ uri: photos[0] }} />
+    <RestaurantCard elevation={5} style={styles.card}>
+      <RestaurantCardCover
+        key={name}
+        style={styles.cover}
+        source={{ uri: photos[0] }}
+      />
       <Title>{name}</Title>
-    </Card>
+    </RestaurantCard>
   );
 };
 
