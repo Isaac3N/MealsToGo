@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, StyleSheet, Image } from "react-native";
+import { Text, StyleSheet, Image, View } from "react-native";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 
 import star from "../../../../assets/star";
+import open from "../../../../assets/open";
 
 const Info = styled.View`
   padding: ${(props) => props.theme.space[3]};
@@ -81,9 +82,9 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
               </Text>
             )}
             <View style={{ paddingLeft: 16 }} />
-            {isOpenNow && <SvgXml ml={open} width={20} height={20} />}
+            {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
             <View style={{ paddingLeft: 16 }} />
-            <image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+            <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
           </SectionEnd>
         </Section>
         <Address>{address}</Address>
