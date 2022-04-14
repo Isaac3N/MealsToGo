@@ -5,12 +5,12 @@ import { locationRequest, locationTransform } from "./location.service";
 export const LocationContext = React.createContext();
 
 export const LocationContextProvider = ({ children }) => {
-  const [location, setLocation] = useState(null);
   const [keyword, setKeyword] = useState("San Francisco");
+  const [location, setLocation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const onSearch = (searchKeyword) => {
+  const onSearch = (searchKeyword = "Antwerp") => {
     setIsLoading(true);
     setKeyword(searchKeyword);
     if (!searchKeyword.length) {
