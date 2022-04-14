@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Searchbar } from "react-native-paper";
 import styled from "styled-components/native";
 
@@ -9,7 +9,7 @@ const SearchContainer = styled.View`
 `;
 
 export const Search = () => {
-  const locationContext = useContext(locationContext);
+  const locationContext = useContext(LocationContext);
   return (
     <SearchContainer>
       <Searchbar />
