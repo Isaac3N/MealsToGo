@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Searchbar } from "react-native-paper";
-import { FlatList, StatusBar, View } from "react-native";
+import { FlatList, Pressable, StatusBar, View } from "react-native";
 import styled from "styled-components/native";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
@@ -26,7 +26,6 @@ const LoadingContainer = styled.View`
 `;
 
 export const RestaurantsScreen = ({ navigation }) => {
-  console.log(navigation);
   const restaurantContext = useContext(RestaurantsContext);
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
 
@@ -40,11 +39,15 @@ export const RestaurantsScreen = ({ navigation }) => {
       <Search />
       <RestaurantList
         data={restaurants}
-        renderItem={({ item }) => (
-          <Spacer position="bottom" size="large">
-            <RestaurantInfoCard restaurant={item} />
-          </Spacer>
-        )}
+        renderItem={({ item }) => {
+          return (
+            <Pressable onPress={() => navigation.navigate("RestaurantDetail")}>
+              <Spacer position="bottom" size="large">
+                <RestaurantInfoCard restaurant={item} />
+              </Spacer>
+            </Pressable>
+          );
+        }}
         keyExtractor={(item) => item.name}
       />
     </SafeArea>
