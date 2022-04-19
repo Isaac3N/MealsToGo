@@ -14,6 +14,8 @@ import { Navigation } from "./src/infrastructure/navigation";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
 
+import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
+
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
