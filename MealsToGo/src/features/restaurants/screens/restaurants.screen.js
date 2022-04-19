@@ -15,10 +15,7 @@ import { RestaurantsContext } from "../../../services/restaurants/restaurants.co
 import { ActivityIndicator, Colors } from "react-native-paper";
 import { Search } from "../components/search.component";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
-import {
-  FavouriteBar,
-  FavouritesBar,
-} from "../../../components/favourites/favourites-bar.component";
+import { FavouritesBar } from "../../../components/favourites/favourites-bar.component";
 
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
@@ -53,7 +50,7 @@ export const RestaurantsScreen = ({ navigation }) => {
         isFavouritesToggled={isToggled}
         onFavouritesToggled={() => setIsToggled(!isToggled)}
       />
-      {isToggled && <FavouritesBar />}
+      {isToggled && <FavouritesBar favourites={favourites} />}
       <RestaurantList
         data={restaurants}
         renderItem={({ item }) => {
