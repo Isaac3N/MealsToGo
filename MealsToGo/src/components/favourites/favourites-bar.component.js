@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { Spacer } from "../spacer/spacer.component";
 import { CompactRestaurantInfo } from "../restaurant/compact-restaurant-info.component";
+import { Text } from "../typography/text.component";
 
 const FavouritesWrapper = styled.View`
   padding: 10px;
@@ -10,6 +11,9 @@ const FavouritesWrapper = styled.View`
 
 export const FavouritesBar = ({ favourites, onNavigate }) => (
   <FavouritesWrapper>
+    <Spacer variant="left.large">
+      <Text variant="caption">Favourites : </Text>
+    </Spacer>
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       {favourites.map((restaurant) => {
         const key = restaurant.name;
