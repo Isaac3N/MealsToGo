@@ -20,7 +20,7 @@ export const RegisterScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
-      <Title>Meals To Go</Title>
+      <Title>Se(e) Food</Title>
       <AccountContainer>
         <AuthInput
           label="E-mail"
