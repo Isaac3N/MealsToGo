@@ -1,2 +1,3 @@
-# MealsToGo
-Food delivery system made with react native 
+# SeeFood
+
+Food delivery system made with react native
